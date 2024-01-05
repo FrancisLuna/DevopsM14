@@ -1,3 +1,15 @@
+# Ignorar la carpetas
+.vagrant/
+.terraform
+.terraform/
+credentials/*
+!credentials/ejemplo.csv
+!credentials/ejemplo.pem
+# Ignorar los archivos que contienen ".terraform" y ".tfstate"
+*.terraform*
+*.tfstate
+*.backup
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
