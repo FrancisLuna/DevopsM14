@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Usar la accion chekout version v4: descarga el repo y lo pone en la VM ubuntu-latest 
+      # Usar la accion chekout version v4: descarga el repo y lo pone en la VM ubuntu-latest
       - name: Checkout
         uses: actions/checkout@v4
       - name: Login to Docker Hub
@@ -24,4 +24,4 @@ jobs:
           context: .
           file: ./app/api/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devopsm14:latest
