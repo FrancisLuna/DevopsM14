@@ -5,7 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Web App with Python Flask! HELLO!!'
+    with open('data/index_message.txt', 'r') as file:
+        content = file.read()
+    return content
 
 @app.post('/predict')
 def predict():
