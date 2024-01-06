@@ -3,6 +3,9 @@ from utilities import predict_pipeline
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return 'Web App with Python Flask! HELLO!!'
 
 @app.post('/predict')
 def predict():
