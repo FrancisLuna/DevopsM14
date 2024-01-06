@@ -2,7 +2,7 @@
 FROM python:3.8
 
 # Copia el archivo requirements.txt desde el directorio local al directorio de trabajo en la imagen Docker
-COPY requirements.txt .
+COPY app/api/requirements.txt .
 
 # Ejecuta el comando pip install dentro del contenedor para instalar las dependencias que se encuentran en requirements.txt
 RUN pip install -r requirements.txt
