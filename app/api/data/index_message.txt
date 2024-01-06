@@ -1,1 +1,1 @@
-desde el archivo
+desde la APP /app/api/data/

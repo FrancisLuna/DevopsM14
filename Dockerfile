@@ -2,10 +2,10 @@
 FROM python:3.8
 
 # Establece el directorio de trabajo en /
-WORKDIR /
+WORKDIR /app/api
 
 # Copia el archivo requirements.txt desde el directorio local al directorio de trabajo en la imagen Docker
-COPY app/api/requirements.txt .
+COPY app/api .
 
 # Ejecuta el comando pip install dentro del contenedor para instalar las dependencias que se encuentran en requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN python -c "import nltk; nltk.download('omw-1.4'); nltk.download('wordnet')"
 
 # Copia todo el contenido del directorio local al directorio de trabajo en la imagen Docker. Esto incluirá tu aplicación Flask y cualquier otro archivo necesario para su ejecución.
-COPY /app/api .
+# COPY /app/api .
 
 # Informa a Docker que el contenedor escuchará en el puerto 5000.
 EXPOSE 5000
