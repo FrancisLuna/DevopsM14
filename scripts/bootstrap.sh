@@ -18,8 +18,9 @@ sudo apt-get update -y
 # Install the Docker packages latest
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Agregar el usuario actual al grupo docker para ejecutar comandos sin sudo
+# Agregar el usuario vagrant al grupo docker para ejecutar comandos sin sudo
 sudo usermod -aG docker $USER
+sudo usermod -aG docker vagrant
 
 # Verify that the Docker Engine installation is successful by running the hello-world image.
 sudo docker run hello-world
