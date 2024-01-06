@@ -3,11 +3,13 @@ version:  "3.7"
 services:
   mlapp:
     container_name: mlapp
-    image: francisluna0/devopsm14:latest
+    image: devopsm14 #francisluna0/devopsm14:latest
     ports:
       - "5000:5000"
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./app/api/data:/data
+      - ./data_test:/data
+    env_file:
+      - .env

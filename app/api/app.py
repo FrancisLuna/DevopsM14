@@ -1,13 +1,15 @@
 from flask import Flask, jsonify, request
 from utilities import predict_pipeline
+import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
+    welcome_msg = os.environ.get("WELCOME_MESSAGE")
     with open('data/index_message.txt', 'r') as file:
         content = file.read()
-    return content
+    return f"{welcome_msg}:{content}"
 
 @app.post('/predict')
 def predict():
