@@ -3,7 +3,7 @@ version:  "3.7"
 services:
   mlapp:
     container_name: mlapp
-    image: devopsm14 #francisluna0/devopsm14:latest
+    image: francisluna0/devopsm14:latest
     ports:
       - "5000:5000"
     build:
