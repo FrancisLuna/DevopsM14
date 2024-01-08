@@ -7,6 +7,15 @@ pipeline {
     }
 
     stages {
+        stage('Linting') {
+            steps {
+                script {
+                    // Linting con Hadolint
+                    sh "docker run --rm -i hadolint/hadolint < Dockerfile"                    
+                }
+            }
+        }
+
         stage('Build'){
             steps{
                 sh "docker build -t ${env.RepoDockerHub}/${env.NameContainer}:${env.BUILD_NUMBER} ."
