@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        DOCKERHUB_CREDENCIALS = credentials ('dockerhub')
+        DOCKERHUB_CREDENCIALS = credentials('dockerhub')
         RepoDockerHub = 'francisluna0'
         NameContainer = 'devopsm14'
     }
