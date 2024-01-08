@@ -1,6 +1,6 @@
 # !/bin/bash
 
-# DOCKER
+##### DOCKER ####
 # Add Docker's official GPG key:
 sudo apt-get update -y
 sudo apt-get install -y ca-certificates curl gnupg
@@ -28,3 +28,26 @@ sudo docker run hello-world
 #DOCKER COMPOSE
 sudo apt-get install -y docker-compose-plugin
 docker compose version
+
+#### JENKINMS ####
+# Install prerequisites: JAVA
+sudo apt install -y openjdk-11-jdk
+
+# Install jenkins
+# Añade el repositorio de Jenkins y su clave GPG
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+# Actualiza e instala Jenkins
+sudo apt-get update
+sudo apt-get install -y jenkins
+
+# Inicia el servicio de Jenkins y habilita el inicio automático
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+
+# Agregar el usuario jenkins al grupo docker para ejecutar comandos sin sudo
+sudo usermod -aG docker jenkins
