@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Linting con Hadolint
-                    sh "docker run --rm -i hadolint/hadolint < Dockerfile"                    
+                    sh "RESULT_HADOLINT=$(docker run --rm -i hadolint/hadolint < Dockerfile); echo $RESULT_HADOLINT"
                 }
             }
         }
